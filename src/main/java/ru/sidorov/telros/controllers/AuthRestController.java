@@ -25,13 +25,13 @@ import ru.sidorov.telros.services.implementation.AuthenticationService;
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
 @Slf4j
-@Tag(name = "Авторизация и регистрация", description = "API для авторизации и регистрации.")
+@Tag(name = "Авторизация и регистрация", description = "API для авторизации и регистрации")
 public class AuthRestController {
 
     private final UserService userService;
     private final AuthenticationService authenticationService;
 
-    @Operation(summary = "Регистрация нового пользователя.", description = "Возвращает зарегистрировавшегося пользователя.")
+    @Operation(summary = "Регистрация нового пользователя", description = "Возвращает зарегистрировавшегося пользователя")
     @RequestMapping(value = "/registration", produces = "application/json;charset=UTF-8", method = RequestMethod.POST)
     public TelResponseEntity<UserDto> registration(@Valid @RequestBody UserSaveDto userDto) {
         log.info("[registration] Starting");
@@ -48,7 +48,7 @@ public class AuthRestController {
         return responseEntity;
     }
 
-    @Operation(summary = "Получение токена для зарегистрированного пользователя.", description = "Возвращает логит и токен для зарегестрированного пользователя.")
+    @Operation(summary = "Получение токена для зарегистрированного пользователя", description = "Возвращает логит и токен для зарегестрированного пользователя")
     @RequestMapping(value = "/token", produces = "application/json;charset=UTF-8", method = RequestMethod.POST)
     public TelResponseEntity<JwtResponse> authUser(@Valid @RequestBody CredentialsDto credentialsDto, HttpServletResponse response) {
         log.info("[authUser] Starting");

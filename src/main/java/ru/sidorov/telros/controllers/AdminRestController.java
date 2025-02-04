@@ -2,12 +2,13 @@ package ru.sidorov.telros.controllers;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.springframework.web.bind.annotation.*;
-import ru.sidorov.telros.config.jwt.JwtUtils;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import ru.sidorov.telros.models.dto.common.TelResponseEntity;
 import ru.sidorov.telros.models.dto.common.TelResponseErrorEntity;
 import ru.sidorov.telros.models.dto.common.TelResponseOkEntity;
