@@ -10,9 +10,9 @@ import static java.time.OffsetDateTime.now;
 public interface CommonService {
 
     /**
-     * Returning subfolder image
+     * Возврат изображения подпапки
      *
-     * @return
+     * @return дата в формате папок
      */
     static String getImageSubfolder() {
         return DateTimeFormatter.ofPattern("yyyy").format(now()) +
@@ -21,9 +21,9 @@ public interface CommonService {
     }
 
     /**
-     * Common simple date format
+     * Общий простой формат даты
      *
-     * @return
+     * @return {@link SimpleDateFormat}
      */
     static SimpleDateFormat getDateFormat() {
         return new SimpleDateFormat("HH_mm_ss_SSS");
@@ -31,11 +31,11 @@ public interface CommonService {
 
     /**
      *
-     * @param fileSubfolder file subfolder
-     * @param entityId entity identifier (user id, project id and so on) for file naming
-     * @param fileInputStream file input stream
-     * @return full path to file
-     * @throws IOException
+     * @param fileSubfolder подпапка с файлами
+     * @param entityId идентификатор объекта (идентификатор пользователя, идентификатор проекта и т. д.) для именования файлов
+     * @param fileInputStream поток ввода файла
+     * @return полный путь к файлу
+     * @throws IOException возможное исключение
      */
     String saveFile(String fileSubfolder,
                     Integer entityId,

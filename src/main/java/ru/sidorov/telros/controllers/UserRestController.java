@@ -34,13 +34,32 @@ public class UserRestController {
         TelResponseEntity<UserDto> responseEntity;
 
         try {
-            responseEntity = new TelResponseOkEntity<>(userService.updateByDto(userDto));
+            responseEntity = new TelResponseOkEntity<>(userService.updateUser(userDto));
         } catch (Exception e) {
             log.error(ExceptionUtils.getRootCauseMessage(e));
             responseEntity = new TelResponseErrorEntity<>(e);
         }
 
-        log.info("[updateUser] Starting");
+        log.info("[updateUser] Done");
+        return responseEntity;
+    }
+
+    @Operation(summary = "Удаление своего аккаунта пользователя или удаление пользователя администратором", description = "Возвращает строку с информации об успешности операции")
+    @RequestMapping(value = "/{id}/delUser", produces = "application/json", method = RequestMethod.DELETE)
+    public TelResponseEntity<String> delUser(@PathVariable("id") Integer id,
+                                             HttpServletRequest request) {
+        log.info("[delUser] Starting");
+        TelResponseEntity<String> responseEntity;
+
+        try {
+            userService.delUser(id, jwtUtils.getUserFromToken(jwtUtils.getTokenFromRequest(request)));
+            responseEntity = new TelResponseOkEntity<>(String.format("Пользователь с id: %d успешно удален", id));
+        } catch (Exception e) {
+            log.error(ExceptionUtils.getRootCauseMessage(e));
+            responseEntity = new TelResponseErrorEntity<>(e);
+        }
+
+        log.info("[delUser] Done");
         return responseEntity;
     }
 

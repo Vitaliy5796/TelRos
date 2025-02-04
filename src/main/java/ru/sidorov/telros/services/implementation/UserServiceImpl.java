@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public UserDto updateByDto(UserSaveDto userDto) {
+    public UserDto updateUser(UserSaveDto userDto) {
         Integer userId = userDto.getId();
         if (userId == null) {
             throw new NullIdException();
@@ -79,6 +79,23 @@ public class UserServiceImpl implements UserService {
         User saveUser = userRepository.save(user);
 
         return userMapper.toUserDto(saveUser);
+    }
+
+    @Transactional
+    @Override
+    public void delUser(Integer id, User user) {
+        if (id == null) {
+            throw new NullIdException();
+        }
+
+        if (!userRepository.existsById(id)) {
+            throw new NotFoundUserException(id);
+        }
+        if (user.getId().equals(id) || user.getRole().getName().equals("ROLE_ADMIN")) {
+            userRepository.deleteById(id);
+        } else {
+            throw new AccessDeniedException();
+        }
     }
 
     @Override

@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 
 public class UserAlreadyExistsException extends TelRestException {
 
-    public static final String DEFAULT_ERROR_MSG = "Username already exists";
+    public static final String DEFAULT_ERROR_MSG = "Username уже существует";
 
     public UserAlreadyExistsException(String message) {
         super(HttpStatus.CONFLICT, message);
