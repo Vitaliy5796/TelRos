@@ -2,6 +2,7 @@ package ru.sidorov.telros.controllers;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
@@ -27,7 +28,7 @@ public class AdminRestController {
 
     @Operation(summary = "Создание нового пользователя", description = "Возвращает созданного пользователя")
     @RequestMapping(value = "/newUser", produces = "application/json", method = RequestMethod.POST)
-    public TelResponseEntity<UserDto> createUser(@RequestBody UserSaveDto userDto) {
+    public TelResponseEntity<UserDto> createUser(@Valid @RequestBody UserSaveDto userDto) {
         log.info("[createUser] Starting");
         TelResponseEntity<UserDto> responseEntity;
 
