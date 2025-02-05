@@ -22,7 +22,7 @@ import ru.sidorov.telros.services.implementation.AuthenticationService;
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
 @Slf4j
-@Tag(name = "Авторизация и регистрация", description = "API для авторизации и регистрации")
+@Tag(name = "Получение токена", description = "API для авторизации и регистрации")
 public class AuthRestController {
 
     private final AuthenticationService authenticationService;
