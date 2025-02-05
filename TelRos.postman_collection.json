@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "efbd808a-18b9-49ad-a4e0-b38048c731b4",
+		"name": "TelRos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26053222"
+	},
+	"item": [
+		{
+			"name": "UserController",
+			"item": [
+				{
+					"name": "Удаление пользователя",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnJ1IiwiaWF0IjoxNzM4NjkzMTQyLCJleHAiOjE3Mzg3Nzc3NDJ9.FFACODKfuy2JfkRY6kx5JSeYARbhLko6mv2iPLNj_se1EmdehohtLEjGWssfOnJB3WR2FF0rMf-9BReh-TgonA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "laz3PZ8Jd/cloud_0.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение пользователя",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnJ1IiwiaWF0IjoxNzM4NjkzMTQyLCJleHAiOjE3Mzg3Nzc3NDJ9.FFACODKfuy2JfkRY6kx5JSeYARbhLko6mv2iPLNj_se1EmdehohtLEjGWssfOnJB3WR2FF0rMf-9BReh-TgonA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/user/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Обновление пользователя",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnJ1IiwiaWF0IjoxNzM4NjkzMTQyLCJleHAiOjE3Mzg3Nzc3NDJ9.FFACODKfuy2JfkRY6kx5JSeYARbhLko6mv2iPLNj_se1EmdehohtLEjGWssfOnJB3WR2FF0rMf-9BReh-TgonA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"3\",\r\n    \"password\" : \"vitaliy\",\r\n    \"contactPhone\" : \"+72222222222\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание пользователя",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnJ1IiwiaWF0IjoxNzM4NjkzMTQyLCJleHAiOjE3Mzg3Nzc3NDJ9.FFACODKfuy2JfkRY6kx5JSeYARbhLko6mv2iPLNj_se1EmdehohtLEjGWssfOnJB3WR2FF0rMf-9BReh-TgonA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"test@mail.com\",\r\n    \"contactPhone\" : \"+71111111111\",\r\n    \"password\" : \"testtest\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AuthController",
+			"item": [
+				{
+					"name": "Токен",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\" : \"admin@mail.ru\",\r\n    \"password\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserDetailsController",
+			"item": [
+				{
+					"name": "Создание детальной информации",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnJ1IiwiaWF0IjoxNzM4NjkzMTQyLCJleHAiOjE3Mzg3Nzc3NDJ9.FFACODKfuy2JfkRY6kx5JSeYARbhLko6mv2iPLNj_se1EmdehohtLEjGWssfOnJB3WR2FF0rMf-9BReh-TgonA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastname\" : \"Adminov\",\r\n    \"firstname\" : \"Admin\",\r\n    \"surname\" : \"Adminovich\",\r\n    \"birthday\" : \"1995-02-07\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/:userId/details/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								":userId",
+								"details",
+								""
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение детальной информации пользователя",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnJ1IiwiaWF0IjoxNzM4NjkzMTQyLCJleHAiOjE3Mzg3Nzc3NDJ9.FFACODKfuy2JfkRY6kx5JSeYARbhLko6mv2iPLNj_se1EmdehohtLEjGWssfOnJB3WR2FF0rMf-9BReh-TgonA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/user/:userId/details/:detailsId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								":userId",
+								"details",
+								":detailsId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "detailsId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление детальной информации",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnJ1IiwiaWF0IjoxNzM4NjkzMTQyLCJleHAiOjE3Mzg3Nzc3NDJ9.FFACODKfuy2JfkRY6kx5JSeYARbhLko6mv2iPLNj_se1EmdehohtLEjGWssfOnJB3WR2FF0rMf-9BReh-TgonA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/user/:userId/details/:detailsId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								":userId",
+								"details",
+								":detailsId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "4"
+								},
+								{
+									"key": "detailsId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Обновление детальной информации",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnJ1IiwiaWF0IjoxNzM4NjkzMTQyLCJleHAiOjE3Mzg3Nzc3NDJ9.FFACODKfuy2JfkRY6kx5JSeYARbhLko6mv2iPLNj_se1EmdehohtLEjGWssfOnJB3WR2FF0rMf-9BReh-TgonA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1\",\r\n    \"lastname\" : \"Тестов\",\r\n    \"firstname\" : \"Тест\",\r\n    \"surname\" : \"Тестович\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/:userId/details/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								":userId",
+								"details",
+								""
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserAvatarController",
+			"item": [
+				{
+					"name": "Добавление аватара пользователя",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnJ1IiwiaWF0IjoxNzM4NjkzMTQyLCJleHAiOjE3Mzg3Nzc3NDJ9.FFACODKfuy2JfkRY6kx5JSeYARbhLko6mv2iPLNj_se1EmdehohtLEjGWssfOnJB3WR2FF0rMf-9BReh-TgonA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "8xs1HAKlQ/images.jpeg"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/avatar/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"avatar",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение аватара пользователя",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLnJ1IiwiaWF0IjoxNzM4NjkzMTQyLCJleHAiOjE3Mzg3Nzc3NDJ9.FFACODKfuy2JfkRY6kx5JSeYARbhLko6mv2iPLNj_se1EmdehohtLEjGWssfOnJB3WR2FF0rMf-9BReh-TgonA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/user/avatar/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"avatar",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

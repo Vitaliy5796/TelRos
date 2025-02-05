@@ -16,11 +16,13 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @AllArgsConstructor
 @Schema(description = "Контактная информация пользователя")
 @JsonInclude(NON_NULL)
-public class UserDto {
+public class UserContactInformationDto {
     @Schema(description = "Уникальный идентификатор пользователя", example = "1")
     private Integer id;
     @Schema(description = "Почта пользователя", example = "vitaliy@yandex.ru")
     private String email;
     @Schema(description = "Номер телефона пользователя", example = "+79999999999")
     private String contactPhone;
+    @Schema(description = "Детальная информация пользователя")
+    private UserDetailsInformationDto userDetailsInformation;
 }

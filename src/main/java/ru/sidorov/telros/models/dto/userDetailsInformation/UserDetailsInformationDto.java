@@ -1,11 +1,15 @@
-package ru.sidorov.telros.models.dto.user;
+package ru.sidorov.telros.models.dto.userDetailsInformation;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.sidorov.telros.models.dto.user.UserDto;
 
 import java.time.LocalDate;
 
@@ -13,21 +17,11 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(description = "Пользователь для сохранения")
-public class UserSaveDto {
+@Schema(description = "Детальная информация пользователя")
+public class UserDetailsInformationDto {
 
-    @Schema(description = "Уникальный идентификатор пользователя (Только для изменения)", example = "1")
+    @Schema(description = "Уникальный идентификатор детальной информации пользователя", example = "1")
     private Integer id;
-
-    @Email(message = "Email должен быть в корректном формате")
-    @NotBlank(message = "Email не может быть пустым")
-    @Schema(description = "Почта пользователя", example = "vitaliy@yandex.ru")
-    private String email;
-
-    @NotBlank(message = "Пароль не может быть пустым")
-    @Size(min = 6, message = "Пароль должен быть не менее 6 символов")
-    @Schema(description = "Пароль пользователя", example = "vitaliy")
-    private String password;
 
     @NotBlank(message = "Имя пользователя не может быть пустым")
     @Size(min = 3, max = 50, message = "Имя пользователя должно быть от 3 до 50 символов")
@@ -48,11 +42,9 @@ public class UserSaveDto {
     @Schema(description = "Дата рождения пользователя", example = "1996-08-22")
     private LocalDate birthday;
 
-    @NotBlank(message = "Номер телефона пользователя не может быть пустым")
-    @Pattern(regexp = "\\+7\\d{10}", message = "Номер телефона должен быть в формате +7XXXXXXXXXX")
-    @Schema(description = "Номер телефона пользователя", example = "+79999999999")
-    private String contactPhone;
-
     @Schema(description = "Аватар пользователя")
     private String pictureUrl;
+
+    @Schema(description = "Владелец детальной информации")
+    private UserDto user;
 }
