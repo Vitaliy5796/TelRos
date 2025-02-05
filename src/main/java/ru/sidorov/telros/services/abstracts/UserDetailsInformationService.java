@@ -5,6 +5,9 @@ import ru.sidorov.telros.models.dto.userDetailsInformation.UserDetailsInformatio
 import ru.sidorov.telros.models.exception.AccessDeniedException;
 import ru.sidorov.telros.models.exception.NotFoundUserDetailsInformationException;
 
+/**
+ * Сервис для работы с детальной информацией пользователя
+ */
 public interface UserDetailsInformationService {
 
     /**

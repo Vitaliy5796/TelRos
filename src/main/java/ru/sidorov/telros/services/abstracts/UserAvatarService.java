@@ -5,7 +5,10 @@ import ru.sidorov.telros.models.entities.UserDetailsInformation;
 
 import java.io.IOException;
 
-public interface UserService {
+/**
+ * Сервис для работы аватаром пользователя
+ */
+public interface UserAvatarService {
 
     // ==================== Работа с аватаром ====================
 

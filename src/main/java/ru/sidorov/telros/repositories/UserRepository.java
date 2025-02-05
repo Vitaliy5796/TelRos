@@ -6,7 +6,7 @@ import ru.sidorov.telros.models.entities.User;
 import java.util.Optional;
 
 /**
- * Репозиторий для пользователя
+ * Репозиторий пользователя
  */
 @Repository
 public interface UserRepository extends BaseRepository<User> {

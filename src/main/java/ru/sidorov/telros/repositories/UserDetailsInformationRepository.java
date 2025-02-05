@@ -7,6 +7,9 @@ import ru.sidorov.telros.models.entities.UserDetailsInformation;
 
 import java.util.Optional;
 
+/**
+ * Репозиторий детальной информации пользователя
+ */
 @Repository
 public interface UserDetailsInformationRepository extends BaseRepository<UserDetailsInformation>{
 

@@ -10,7 +10,7 @@ import ru.sidorov.telros.models.entities.UserDetailsInformation;
 import ru.sidorov.telros.models.exception.NotFoundUserAvatarException;
 import ru.sidorov.telros.repositories.UserDetailsInformationRepository;
 import ru.sidorov.telros.services.abstracts.CommonService;
-import ru.sidorov.telros.services.abstracts.UserService;
+import ru.sidorov.telros.services.abstracts.UserAvatarService;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -19,7 +19,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 @Service
 @Slf4j
-public class UserServiceImpl implements UserService {
+public class UserAvatarServiceImpl implements UserAvatarService {
 
     private final UserDetailsInformationRepository userRepository;
     private final CommonService commonService;

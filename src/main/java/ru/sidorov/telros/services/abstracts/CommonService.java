@@ -7,6 +7,9 @@ import java.time.format.DateTimeFormatter;
 
 import static java.time.OffsetDateTime.now;
 
+/**
+ * Сервис для сохранения файла
+ */
 public interface CommonService {
 
     /**

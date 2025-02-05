@@ -6,6 +6,9 @@ import ru.sidorov.telros.models.dto.user.UserContactInformationUpdateDto;
 import ru.sidorov.telros.models.exception.AccessDeniedException;
 import ru.sidorov.telros.models.exception.NotFoundUserException;
 
+/**
+ * Сервис для работы с пользователем
+ */
 public interface UserContactInformationService {
 
     /**

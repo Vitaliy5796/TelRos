@@ -16,7 +16,7 @@ import ru.sidorov.telros.models.dto.common.TelResponseEntity;
 import ru.sidorov.telros.models.dto.common.TelResponseErrorEntity;
 import ru.sidorov.telros.models.dto.common.TelResponseOkEntity;
 import ru.sidorov.telros.models.entities.UserDetailsInformation;
-import ru.sidorov.telros.services.abstracts.UserService;
+import ru.sidorov.telros.services.abstracts.UserAvatarService;
 
 @RestController
 @RequestMapping("/api/user/avatar")
@@ -26,7 +26,7 @@ import ru.sidorov.telros.services.abstracts.UserService;
 public class UserAvatarRestController {
 
     private final JwtUtils jwtUtils;
-    private final UserService userService;
+    private final UserAvatarService userAvatarService;
 
     @Operation(summary = "Добавление аватара для пользователя", description = "Аватар")
     @RequestMapping(value = "/add", produces = "application/json", method = RequestMethod.POST)
@@ -36,7 +36,7 @@ public class UserAvatarRestController {
         TelResponseEntity<String> responseEntity;
         try {
             UserDetailsInformation userDetailsInformation = jwtUtils.getUserFromToken(jwtUtils.getTokenFromRequest(request)).getUserDetailsInformation();
-            responseEntity = new TelResponseOkEntity<>(userService.addUserAvatar(file, userDetailsInformation));
+            responseEntity = new TelResponseOkEntity<>(userAvatarService.addUserAvatar(file, userDetailsInformation));
         } catch (Exception e) {
             log.error(ExceptionUtils.getStackTrace(e));
             responseEntity = new TelResponseErrorEntity<>(e);
@@ -54,7 +54,7 @@ public class UserAvatarRestController {
 
         try {
             UserDetailsInformation userDetailsInformation = jwtUtils.getUserFromToken(jwtUtils.getTokenFromRequest(request)).getUserDetailsInformation();
-            responseEntity = new TelResponseOkEntity<>(userService.getUserAvatar(userDetailsInformation));
+            responseEntity = new TelResponseOkEntity<>(userAvatarService.getUserAvatar(userDetailsInformation));
         } catch (Exception e) {
             log.error(ExceptionUtils.getStackTrace(e));
             responseEntity = new TelResponseErrorEntity<>(e);
@@ -71,7 +71,7 @@ public class UserAvatarRestController {
         TelResponseEntity<String> responseEntity;
 
         try {
-            userService.delUserAvatar(jwtUtils.getUserFromToken(jwtUtils.getTokenFromRequest(request)).getUserDetailsInformation());
+            userAvatarService.delUserAvatar(jwtUtils.getUserFromToken(jwtUtils.getTokenFromRequest(request)).getUserDetailsInformation());
             responseEntity = new TelResponseOkEntity<>("Аватар пользователя удален");
         } catch (Exception e) {
             log.error(ExceptionUtils.getStackTrace(e));

@@ -5,6 +5,9 @@ import ru.sidorov.telros.models.dto.userDetailsInformation.UserDetailsInformatio
 import ru.sidorov.telros.models.dto.userDetailsInformation.UserDetailsInformationUpdateDto;
 import ru.sidorov.telros.models.entities.UserDetailsInformation;
 
+/**
+ * Маппер для детальной информации пользователя
+ */
 @Mapper(componentModel = "spring")
 public interface UserDetailsInformationMapper {
 

@@ -8,6 +8,9 @@ import ru.sidorov.telros.models.dto.user.UserContactInformationUpdateDto;
 import ru.sidorov.telros.models.dto.user.UserDto;
 import ru.sidorov.telros.models.entities.User;
 
+/**
+ * Маппер для пользователя
+ */
 @Mapper(componentModel = "spring", uses = {UserDetailsInformationMapper.class})
 public interface UserMapper {
 
