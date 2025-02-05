@@ -14,9 +14,9 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API для управления аптекой")
+                        .title("API для управления пользователями")
                         .version("1.0.0")
-                        .description("Документация API для управления лекарствами и поставщиками")
+                        .description("Документация API для управления пользователями")
                         .license(new License().name("Apache 2.0").url("http://springdoc.org")))
                 .components(new io.swagger.v3.oas.models.Components()
                         .addSecuritySchemes("bearerAuth",
