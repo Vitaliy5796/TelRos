@@ -18,10 +18,6 @@ public class SwaggerConfig {
                         .version("1.0.0")
                         .description("Документация API для управления лекарствами и поставщиками")
                         .license(new License().name("Apache 2.0").url("http://springdoc.org")))
-//                .externalDocs(new ExternalDocumentation()
-//                        .description("Документация проекта")
-//                        .url("https://example.com"))
-//                .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
                 .components(new io.swagger.v3.oas.models.Components()
                         .addSecuritySchemes("bearerAuth",
                                 new SecurityScheme()
